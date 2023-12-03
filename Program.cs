@@ -23,7 +23,6 @@
 }
 void PrintArray(string[] array)
 {
-    if (array.Length == 0) {Console.WriteLine("[]");}
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write($"[{array[i]}] ");
@@ -31,4 +30,5 @@ void PrintArray(string[] array)
 }
 string[] array = ["Russia", "Denmark", "Kazan"];
 string[] result = ResultArray(array);
+if (result.Length == 0) {Console.WriteLine("[]");}
 PrintArray(result);
