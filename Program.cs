@@ -1,34 +1,40 @@
-﻿string[] ResultArray(string[] array)
+﻿class Programm
 {
-    int limitForElementLength = 3;
-    int newArrSizeCounter = 0;
-    for (int i = 0; i < array.Length; i++)
+    public static void Main(string[] args)
     {
-        if (array[i].Length <= limitForElementLength)
+        string[] ResultArray(string[] array)
         {
-            newArrSizeCounter++;
+            int limitForElementLength = 3;
+            int newArrSizeCounter = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Length <= limitForElementLength)
+                {
+                    newArrSizeCounter++;
+                }
+            }
+            string[] newArray = new string[newArrSizeCounter];
+            newArrSizeCounter = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Length <= limitForElementLength)
+                {
+                    newArray[newArrSizeCounter] = array[i];
+                    newArrSizeCounter++;
+                }
+            }
+            return newArray;
         }
-    }
-    string[] newArray = new string[newArrSizeCounter];
-    newArrSizeCounter = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i].Length <= limitForElementLength)
+        void PrintArray(string[] array)
         {
-            newArray[newArrSizeCounter] = array[i];
-            newArrSizeCounter++;
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"[{array[i]}] ");
+            }
         }
-    }
-    return newArray;
-}
-void PrintArray(string[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"[{array[i]}] ");
+        string[] array = ["Russia", "Denmark", "Kazan"];
+        string[] result = ResultArray(array);
+        if (result.Length == 0) { Console.WriteLine("[]"); }
+        PrintArray(result);
     }
 }
-string[] array = ["Russia", "Denmark", "Kazan"];
-string[] result = ResultArray(array);
-if (result.Length == 0) {Console.WriteLine("[]");}
-PrintArray(result);
