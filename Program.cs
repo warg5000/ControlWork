@@ -36,4 +36,3 @@ void PrintArray(string[] array)
 string[] array = ["Russia", "Denmark", "Kazan"];
 string[] result = ResultArray(array);
 PrintArray(result);
-
