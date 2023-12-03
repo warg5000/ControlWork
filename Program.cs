@@ -5,25 +5,25 @@
 //["Russia", "Denmark", "Kazan"] → []
 string[] ResultArray(string[] array)
 {
-    int a = 0;
-    int b = 0;
+    int newArrSizeCounter = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            a++;
+            newArrSizeCounter++;
         }
     }
-    string[] newarr = new string[a];
+    string[] newArray = new string[newArrSizeCounter];
+    newArrSizeCounter = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            newarr[b] = array[i];
-            b++;
+            newArray[newArrSizeCounter] = array[i];
+            newArrSizeCounter++;
         }
     }
-    return newarr;
+    return newArray;
 }
 void PrintArray(string[] array)
 {
